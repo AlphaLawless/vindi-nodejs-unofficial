@@ -1,0 +1,57 @@
+{
+  "name": "vindi-nodejs-unofficial",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx --watch src/main.ts",
+    "check:ts": "npx tsc --noEmit",
+    "build": "tsup",
+    "test": "vitest run --silent",
+    "test:ci:ui": "vitest --open --silent --ui --coverage.enabled=true",
+    "test:ci": "bun run test:coverage",
+    "test:verbose": "vitest --run --reporter verbose",
+    "test:coverage": "vitest --run --coverage",
+    "test:uni": "vitest watch --project unit-test",
+    "test:int": "vitest watch --project integration-test",
+    "test:staged": "vitest related --run --passWithNoTests",
+    "lint:apply": "biome check --apply ./src/**/*",
+    "lint": "biome check ./src",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphalawless/vindi-noddejs-unofficial.git"
+  },
+  "keywords": [
+    "vindi",
+    "payment",
+    "checkout",
+    "sdk",
+    "integration"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "<alpha.vylly12@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.6.3",
+    "@types/node": "20.12.2",
+    "@vitest/coverage-v8": "1.4.0",
+    "@vitest/ui": "1.4.0",
+    "git-commit-msg-linter": "5.0.7",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.2",
+    "tsx": "4.7.1",
+    "typescript": "5.4.3",
+    "vitest": "1.4.0"
+  },
+  "dependencies": {
+    "pino": "8.19.0",
+    "pino-pretty": "11.0.0",
+    "zod": "3.22.4"
+  }
+}
