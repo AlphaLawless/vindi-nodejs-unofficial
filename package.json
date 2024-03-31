@@ -1,6 +1,6 @@
 {
   "name": "vindi-nodejs-unofficial",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "tsx --watch src/main.ts",
     "check:ts": "npx tsc --noEmit",
-    "build": "tsup",
+    "build": "rm -rf dist && tsc --build && tsc-alias -p tsconfig.json",
     "test": "vitest run --silent",
     "test:ci:ui": "vitest --open --silent --ui --coverage.enabled=true",
     "test:ci": "bun run test:coverage",
@@ -17,13 +17,13 @@
     "test:uni": "vitest watch --project unit-test",
     "test:int": "vitest watch --project integration-test",
     "test:staged": "vitest related --run --passWithNoTests",
-    "lint:apply": "biome check --apply ./src/**/*",
+    "lint:fix": "biome check --apply ./src/**/*",
     "lint": "biome check ./src",
     "prepare": "husky"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alphalawless/vindi-noddejs-unofficial.git"
+    "url": "git+https://github.com/alphalawless/vindi-nodejs-unofficial.git"
   },
   "keywords": [
     "vindi",
@@ -45,6 +45,7 @@
     "git-commit-msg-linter": "5.0.7",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
+    "tsc-alias": "1.8.8",
     "tsx": "4.7.1",
     "typescript": "5.4.3",
     "vitest": "1.4.0"
