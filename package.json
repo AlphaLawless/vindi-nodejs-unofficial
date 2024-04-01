@@ -1,6 +1,6 @@
 {
   "name": "vindi-nodejs-unofficial",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vindi SDK NodeJS Unofficial",
   "type": "module",
   "main": "dist/index.js",
