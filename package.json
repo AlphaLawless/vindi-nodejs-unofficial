@@ -1,5 +1,5 @@
 {
-  "name": "vindi-nodejs-unofficial",
+  "name": "@alphalawless/vindi-nodejs-unofficial",
   "version": "0.0.3",
   "description": "Vindi SDK NodeJS Unofficial",
   "type": "module",
@@ -27,6 +27,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alphalawless/vindi-nodejs-unofficial.git"
+  },
+  "publishConfig": {
+    "@alphalawless:registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "vindi",
