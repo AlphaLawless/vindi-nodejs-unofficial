@@ -28,9 +28,6 @@
     "type": "git",
     "url": "git+https://github.com/alphalawless/vindi-nodejs-unofficial.git"
   },
-  "publishConfig": {
-    "@alphalawless:registry": "https://npm.pkg.github.com"
-  },
   "keywords": [
     "vindi",
     "payment",
