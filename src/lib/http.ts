@@ -11,7 +11,7 @@ interface HttpRequestProps<T extends Headers = Headers> extends Options {
   body?: any | null
 }
 
-type QueryParams = Record<string, string | number>
+type QueryParams = Record<string, string | number | boolean>
 
 interface HttpClientConfig extends HttpRequestProps {
   queryParams?: QueryParams

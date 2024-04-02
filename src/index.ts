@@ -1,5 +1,4 @@
 import { VindiClient } from './vindi-client'
-
 export default VindiClient
 export { VindiClient }
 
@@ -13,3 +12,4 @@ export { Discount } from './lib/rest/discounts'
 export { Plan } from './lib/rest/plans'
 export { Product } from './lib/rest/products'
 export { Movement } from './lib/rest/movements'
+export { Subscription } from './lib/rest/subscriptions'
