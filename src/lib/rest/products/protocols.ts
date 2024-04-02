@@ -26,6 +26,12 @@ export declare interface ProductsReturn {
   metadata: VindiMetadata
 }
 
+export declare interface IProduct {
+  id: number
+  name: string
+  code: string
+}
+
 export declare interface PricingSchema {
   id: string
   short_format: string

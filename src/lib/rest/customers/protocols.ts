@@ -29,6 +29,13 @@ export declare interface CustomerBody {
   phones: Omit<Phone, 'id'>[]
 }
 
+export declare interface ICustomer {
+  id: number
+  name: string
+  email: string
+  code: string
+}
+
 export declare interface Address {
   street: string
   number: string

@@ -1,3 +1,6 @@
+import type { ICustomer } from '../customers/protocols'
+import type { IPlan } from '../plans/protocols'
+import type { ProductItemReturn } from '../product_items/protocols'
 import type { VindiMetadata } from '../protocols'
 
 export interface SubscriptionBody {
@@ -11,7 +14,7 @@ export interface SubscriptionBody {
   billing_trigger_day?: number
   billing_cycles?: number
   metadata?: VindiMetadata
-  product_items: Array<Omit<Partial<ProductItem>, 'id'> & { id: number }>
+  product_items: Array<Omit<Partial<ProductItemReturn>, 'id'> & { id: number }>
   payment_profile?: PaymentProfile
   invoice_split?: boolean
   subscription_affiliates?: SubscriptionAffiliate[]
@@ -34,74 +37,15 @@ export declare interface SubscriptionReturn {
   installments: number
   created_at: string
   updated_at: string
-  customer: Customer
-  plan: Plan
-  product_items: ProductItem[]
+  customer: ICustomer
+  plan: IPlan
+  product_items: ProductItemReturn[]
   payment_method: PaymentMethod
   current_period: CurrentPeriod
   metadata: VindiMetadata
   payment_profile: PaymentProfile
   invoice_split: boolean
   subscription_affiliates: SubscriptionAffiliate[]
-}
-
-export declare interface Customer {
-  id: number
-  name: string
-  email: string
-  code: string
-}
-
-export declare interface Plan {
-  id: number
-  name: string
-  code: string
-}
-
-export declare interface ProductItem {
-  id: number
-  status: string
-  uses: number
-  cycles: number
-  quantity: number
-  created_at: string
-  updated_at: string
-  product: Product
-  pricing_schema: PricingSchema
-  discounts: Discount[]
-}
-
-export declare interface Product {
-  id: number
-  name: string
-  code: string
-}
-
-export declare interface PricingSchema {
-  id: string
-  short_format: string
-  price: number
-  minimum_price: number
-  schema_type: string
-  pricing_ranges: PricingRange[]
-  created_at: string
-}
-
-export declare interface PricingRange {
-  id: string
-  start_quantity: number
-  end_quantity: number
-  price: number
-  overage_price: number
-}
-
-export declare interface Discount {
-  id: number
-  discount_type: string
-  percentage: number
-  amount: number
-  quantity: number
-  cycles: number
 }
 
 export declare interface PaymentMethod {

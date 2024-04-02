@@ -1,4 +1,4 @@
-export interface BillItemsReturn {
+export declare interface BillItemsReturn {
   id: number
   amount: number
   quantity: number
@@ -11,7 +11,7 @@ export interface BillItemsReturn {
   usages: Usage[]
 }
 
-export interface PricingSchema {
+export declare interface PricingSchema {
   id: string
   short_format: string
   price: number
@@ -21,7 +21,7 @@ export interface PricingSchema {
   created_at: string
 }
 
-export interface PricingRange {
+export declare interface PricingRange {
   id: string
   start_quantity: number
   end_quantity: number
@@ -29,24 +29,24 @@ export interface PricingRange {
   overage_price: number
 }
 
-export interface Product {
+export declare interface Product {
   id: number
   name: string
   code: string
 }
 
-export interface ProductItem {
+export declare interface ProductItem {
   id: number
-  product: Product2
+  product: ProductItems
 }
 
-export interface Product2 {
+export declare interface ProductItems {
   id: number
   name: string
   code: string
 }
 
-export interface Discount {
+export declare interface Discount {
   id: number
   discount_type: string
   percentage: number
@@ -55,7 +55,7 @@ export interface Discount {
   cycles: number
 }
 
-export interface Usage {
+export declare interface Usage {
   id: number
   description: string
   created_at: string

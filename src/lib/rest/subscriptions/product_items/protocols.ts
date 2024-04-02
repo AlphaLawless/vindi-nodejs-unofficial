@@ -1,7 +1,7 @@
 import type { ApiResponse, Options } from '@/protocols'
 import type { VindiClient } from '@/vindi-client'
+import type { ProductItemReturn } from '../../product_items/protocols'
 import type { QueryParams } from '../../protocols'
-import type { ProductItem } from '../protocols'
 
 export declare interface SubscriptionGetProductItemsRequest
   extends Exclude<SubscriptionGetProductItemsData, 'requestOptions'> {
@@ -16,4 +16,4 @@ export declare interface SubscriptionGetProductItemsData {
 
 export declare interface SubscriptionGetProductItemsResponse
   extends ApiResponse,
-    ProductItem {}
+    Array<ProductItemReturn> {}

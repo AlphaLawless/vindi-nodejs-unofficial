@@ -4,10 +4,10 @@ import type {
   MovementCreateData,
   MovementCreateResponse
 } from './create/protocols'
-import { exclude } from './remove'
+import { remove } from './remove'
 import type {
-  MovementExcludeData,
-  MovementExcludeResponse
+  MovementRemoveData,
+  MovementRemoveResponse
 } from './remove/protocols'
 
 export class Movement {
@@ -27,15 +27,15 @@ export class Movement {
   }
 
   /**
-   * Vindi Exclude a Movement.
+   * Vindi Remove a Movement.
    *
    * @see {@link https://vindi.github.io/api-docs/dist/#/movements/deleteV1MovementsId More Information}
    */
-  exclude(
-    movementExcludeData: MovementExcludeData
-  ): Promise<MovementExcludeResponse> {
-    const { id, requestOptions } = movementExcludeData
+  remove(
+    movementRemoveData: MovementRemoveData
+  ): Promise<MovementRemoveResponse> {
+    const { id, requestOptions } = movementRemoveData
     this.config.options = { ...this.config.options, ...requestOptions }
-    return exclude({ config: this.config, id })
+    return remove({ config: this.config, id })
   }
 }

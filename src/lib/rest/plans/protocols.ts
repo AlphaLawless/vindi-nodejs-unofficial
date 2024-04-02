@@ -39,6 +39,12 @@ export declare interface PlanReturn {
   metadata: VindiMetadata
 }
 
+export declare interface IPlan {
+  id: number
+  name: string
+  code: string
+}
+
 export declare interface PlanItem {
   id: number
   product: Product

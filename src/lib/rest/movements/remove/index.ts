@@ -1,14 +1,11 @@
 import { Http } from '@/lib/http'
-import type {
-  MovementExcludeRequest,
-  MovementExcludeResponse
-} from './protocols'
+import type { MovementRemoveRequest, MovementRemoveResponse } from './protocols'
 
-export const exclude = async ({
+export const remove = async ({
   config,
   id
-}: MovementExcludeRequest): Promise<MovementExcludeResponse> => {
-  return await Http.fetch<MovementExcludeResponse>(`/v1/movements/${id}`, {
+}: MovementRemoveRequest): Promise<MovementRemoveResponse> => {
+  return await Http.fetch<MovementRemoveResponse>(`/v1/movements/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Basic ${Buffer.from(`${config.key}:`).toString('base64')}`

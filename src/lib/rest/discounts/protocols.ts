@@ -1,3 +1,5 @@
+import type { ProductItemDiscount } from '../product_items/protocols'
+
 export declare interface DiscountBody {
   product_item_id: number
   discount_type: string
@@ -17,16 +19,14 @@ export declare interface DiscountReturn {
   status: string
   created_at: string
   updated_at: string
-  product_item: ProductItem
+  product_item: ProductItemDiscount
 }
 
-export declare interface ProductItem {
+export declare interface IDiscount {
   id: number
-  product: Product
-}
-
-export declare interface Product {
-  id: number
-  name: string
-  code: string
+  discount_type: string
+  percentage: number
+  amount: number
+  quantity: number
+  cycles: number
 }
