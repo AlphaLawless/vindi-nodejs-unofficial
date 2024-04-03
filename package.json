@@ -9,7 +9,6 @@
     "node": "v20"
   },
   "scripts": {
-    "dev": "tsx --watch src/main.ts",
     "check:ts": "npx tsc --noEmit",
     "build": "rm -rf dist && tsc --build && tsc-alias -p tsconfig.json",
     "test": "vitest run --silent",
