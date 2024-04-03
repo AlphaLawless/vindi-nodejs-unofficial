@@ -7,7 +7,7 @@ export declare interface PlanBody {
   billing_trigger_type: string
   billing_trigger_day: number
   billing_cycles: number
-  code: string
+  code?: string
   description: string
   installments: number
   invoice_split: boolean

@@ -19,14 +19,18 @@ export declare interface CustomerBody {
   name: string
   email: string
   registry_code: string
-  code: string
+  code?: string
   notes?: string
   metadata?: VindiMetadata
   address: Omit<Address, 'additional_details' | 'number'> & {
     number?: string
     additional_details?: string
   }
-  phones: Omit<Phone, 'id'>[]
+  phones: Array<
+    Omit<Phone, 'id' | 'extension'> & {
+      extension?: string
+    }
+  >
 }
 
 export declare interface ICustomer {

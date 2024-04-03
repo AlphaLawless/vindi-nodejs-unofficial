@@ -1,4 +1,6 @@
-export interface IssueReturn {
+import type { ICustomer } from '../customers/protocols'
+
+export declare interface IssueReturn {
   id: number
   issue_type: string
   status: string
@@ -7,12 +9,5 @@ export interface IssueReturn {
   data: string
   created_at: string
   updated_at: string
-  customer: Customer
-}
-
-export interface Customer {
-  id: number
-  name: string
-  email: string
-  code: string
+  customer: ICustomer
 }

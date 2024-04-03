@@ -3,13 +3,13 @@ import type { VindiMetadata } from '../protocols'
 
 export declare interface ProductsBody {
   name: string
-  code: string
+  code?: string
   unit: string
   status: string
   description: string
   invoice: string
   pricing_schema: OmitDeep<PricingSchema, 'id'>
-  metadata: VindiMetadata
+  metadata?: VindiMetadata
 }
 
 export declare interface ProductsReturn {

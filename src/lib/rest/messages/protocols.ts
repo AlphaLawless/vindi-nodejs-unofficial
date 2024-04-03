@@ -1,3 +1,5 @@
+import type { ICustomer } from '../customers/protocols'
+
 export declare interface MessageBody {
   customer_id: number
   charge_id: number
@@ -10,16 +12,9 @@ export declare interface MessageReturn {
   notification_type: string
   seen_at: string
   created_at: string
-  customer: Customer
+  customer: ICustomer
   charge: Charge
   notification: Notification
-}
-
-export declare interface Customer {
-  id: number
-  name: string
-  email: string
-  code: string
 }
 
 export declare interface Charge {

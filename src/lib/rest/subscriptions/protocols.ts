@@ -7,7 +7,7 @@ export interface SubscriptionBody {
   start_at?: string
   plan_id: number
   customer_id: number
-  code: string
+  code?: string
   payment_method_code: string
   installments?: number
   billing_trigger_type?: string
