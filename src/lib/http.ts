@@ -75,7 +75,7 @@ export class Http {
           headers: response.headers
         }
 
-        return Object.assign({}, data, api_response) as ReturnProps
+        return Object.assign(data, { api_response }) as ReturnProps
       }
 
       throw await response.json()
