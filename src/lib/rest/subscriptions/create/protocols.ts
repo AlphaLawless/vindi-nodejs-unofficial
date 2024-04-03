@@ -1,6 +1,10 @@
 import type { ApiResponse, Options } from '@/protocols'
 import type { VindiClient } from '@/vindi-client'
-import type { SubscriptionBody, SubscriptionReturn } from '../protocols'
+import type {
+  BillReturn,
+  SubscriptionBody,
+  SubscriptionReturn
+} from '../protocols'
 
 export declare interface SubscriptionCreateRequest
   extends Exclude<SubscriptionCreateData, 'requestOptions'> {
@@ -13,5 +17,6 @@ export declare interface SubscriptionCreateData {
 }
 
 export declare interface SubscriptionCreateResponse extends ApiResponse {
-  Subscription: SubscriptionReturn
+  subscription: SubscriptionReturn
+  bill: BillReturn
 }
