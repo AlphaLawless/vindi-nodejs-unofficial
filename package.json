@@ -1,6 +1,6 @@
 {
   "name": "@alphalawless/vindi-nodejs-unofficial",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Vindi SDK NodeJS Unofficial",
   "type": "module",
   "main": "dist/index.js",
