@@ -1,4 +1,9 @@
 import type { VindiClient } from '@/vindi-client'
+import { create } from './create'
+import type {
+  PaymentProfilesCreateData,
+  PaymentProfilesCreateResponse
+} from './create/protocols'
 import { inactivate } from './inactivate'
 import type {
   PaymentProfilesInactivateData,
@@ -37,5 +42,18 @@ export class PaymentProfiles {
     const { requestOptions, params, id } = inactivatePaymentProfileData
     this.config.options = { ...this.config.options, ...requestOptions }
     return inactivate({ config: this.config, params, id })
+  }
+
+  /**
+   * Vindi Create Payment Profile.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/payment_profiles/postV1PaymentProfiles More Information}
+   */
+  create(
+    paymentProfilesCreateData: PaymentProfilesCreateData
+  ): Promise<PaymentProfilesCreateResponse> {
+    const { requestOptions, body } = paymentProfilesCreateData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return create({ body, config: this.config })
   }
 }

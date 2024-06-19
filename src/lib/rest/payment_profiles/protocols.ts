@@ -10,6 +10,12 @@ export declare interface PaymentProfilesBody {
   remove_permanentrly: boolean
 }
 
+export declare interface PaymentProfilesCreateBody {
+  gateway_token: string
+  customer_id: number
+  payment_method_code: string
+}
+
 export interface PaymentProfilesReturn {
   id: number
   status: string
