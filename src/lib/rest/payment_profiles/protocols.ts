@@ -11,7 +11,7 @@ export declare interface PaymentProfilesBody {
 }
 
 export declare interface PaymentProfilesCreateBody {
-  gateway_token: string
+  gateway_token?: string
   customer_id: number
   payment_method_code: string
 }
