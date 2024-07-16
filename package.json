@@ -36,7 +36,7 @@
   "files": [
     "dist"
   ],
-  "author": "<alpha.vylly12@gmail.com>",
+  "author": "Alpha Vylly <alpha.vylly12@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "1.6.3",
