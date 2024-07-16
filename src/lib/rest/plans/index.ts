@@ -5,6 +5,8 @@ import { get } from './get'
 import type { PlanGetData, PlanGetResponse } from './get/protocols'
 import { list } from './list'
 import type { PlanListData, PlanListResponse } from './list/protocols'
+import { items } from './plans_items'
+import type { PlanItemsData, PlanItemsResponse } from './plans_items/protocols'
 
 export class Plan {
   constructor(private config: VindiClient) {}
@@ -40,5 +42,16 @@ export class Plan {
     const { id, requestOptions } = planGetData
     this.config.options = { ...this.config.options, ...requestOptions }
     return get({ config: this.config, id })
+  }
+
+  /**
+   * Vindi Get a Plan Items.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/plans/getV1PlansIdPlanItems More Information}
+   */
+  items(planItemsGetData: PlanItemsData): Promise<PlanItemsResponse> {
+    const { id, requestOptions } = planItemsGetData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return items({ config: this.config, id })
   }
 }
