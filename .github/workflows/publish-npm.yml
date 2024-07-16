@@ -28,9 +28,9 @@ jobs:
           git config user.email github-actions@github.com
           VERSION=${GITHUB_REF#refs/tags/}
           npm version $VERSION --no-git-tag-version
-          git add package.json
+          git add package*.json
           git commit -m "deploy: release $VERSION"
-          git push
+          git push origin HEAD:main
 
       - run: npm ci
       - run: npm run build
