@@ -1,9 +1,11 @@
+import { version as packageVersion } from '../../package.json'
+
 export class SDKConfig {
   static readonly API_ENDPOINT_PROD = 'https://app.vindi.com.br/api'
   static readonly API_ENDPOINT_SANDBOX = 'https://sandbox-app.vindi.com.br/api'
   static readonly MEDIA_TYPE = 'application/vnd.api+json'
 
-  static readonly SDK_VERSION = '0.0.1'
+  static readonly SDK_VERSION = packageVersion
 
   static readonly Headers = {
     AUTHORIZATION: 'Authorization',
