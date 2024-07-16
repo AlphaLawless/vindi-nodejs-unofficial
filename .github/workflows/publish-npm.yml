@@ -15,30 +15,12 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
-
-      - name: Update version in package.json
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          VERSION=${GITHUB_REF#refs/tags/}
-          npm version $VERSION --no-git-tag-version
-          git add package*.json
-          git commit -m "deploy: release $VERSION"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.TOKEN }}
-          branch: ${{ github.ref_name }}
 
       - run: npm ci
       - run: npm run build
