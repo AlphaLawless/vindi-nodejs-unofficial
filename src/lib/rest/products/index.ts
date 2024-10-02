@@ -1,4 +1,9 @@
 import type { VindiClient } from '@/vindi-client'
+import { create } from './create'
+import type {
+  ProductsCreateData,
+  ProductsCreateResponse
+} from './create/protocols'
 import { get } from './get'
 import type { ProductsGetData, ProductsGetResponse } from './get/protocols'
 import { list } from './list'
@@ -27,5 +32,18 @@ export class Product {
     const { id, requestOptions } = productsGetData
     this.config.options = { ...this.config.options, ...requestOptions }
     return get({ config: this.config, id })
+  }
+
+  /**
+   * Vindi Create Product.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/products/postV1Products More Information}
+   */
+  create(
+    productCreateData: ProductsCreateData
+  ): Promise<ProductsCreateResponse> {
+    const { requestOptions, body } = productCreateData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return create({ body, config: this.config })
   }
 }

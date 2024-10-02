@@ -1,7 +1,7 @@
 import type { QueryParams } from '@/lib/rest/protocols'
 import type { ApiResponse, Options } from '@/protocols'
 import type { VindiClient } from '@/vindi-client'
-import type { PlanItem } from '../protocols'
+import type { PlanItemReturn } from '../protocols'
 
 export interface PlanItemsQueryParams
   extends Omit<QueryParams<never>, 'query' | 'sort_by' | 'sort_order'> {}
@@ -18,5 +18,5 @@ export interface PlanItemsData {
 }
 
 export interface PlanItemsResponse extends ApiResponse {
-  plans: PlanItem[]
+  plans: PlanItemReturn[]
 }

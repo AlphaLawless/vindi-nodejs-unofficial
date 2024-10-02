@@ -1,3 +1,4 @@
+import type { ProductsReturn } from '../products/protocols'
 import type { VindiMetadata } from '../protocols'
 
 export declare interface PlanBody {
@@ -12,11 +13,13 @@ export declare interface PlanBody {
   installments: number
   invoice_split: boolean
   status: string
-  plan_items: Exclude<
-    PlanItem,
-    'id' | 'pricing_schema' | 'created_at' | 'updated_at'
-  >[]
+  plan_items: PlanItemBody[]
   metadata?: VindiMetadata
+}
+
+export declare interface PlanItemBody {
+  cycles: number
+  product_id: number
 }
 
 export declare interface PlanReturn {
@@ -35,7 +38,7 @@ export declare interface PlanReturn {
   interval_name: string
   created_at: string
   updated_at: string
-  plan_items: PlanItem[]
+  plan_items: PlanItemReturn[]
   metadata: VindiMetadata
 }
 
@@ -45,29 +48,14 @@ export declare interface IPlan {
   code: string
 }
 
-export declare interface PlanItem {
+export declare interface PlanItemReturn {
   id: number
-  product: Product
+  product: ProductsReturn
   pricing_schema: PricingSchema
   cycles: number
   created_at: string
   updated_at: string
 }
-
-export declare interface Product {
-  id: number
-  name: string
-  code: string
-  unit: string
-  status: string
-  description: string
-  invoice: string
-  created_at: string
-  updated_at: string
-  pricing_schema: PricingSchema
-  metadata: VindiMetadata
-}
-
 export declare interface PricingSchema {
   id: string
   short_format: string
