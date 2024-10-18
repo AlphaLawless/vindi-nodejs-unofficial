@@ -34,12 +34,12 @@ export declare interface IProduct {
 
 export declare interface PricingSchema {
   id: string
-  short_format: string
+  short_format?: string
   price: number
   minimum_price: number
   schema_type: string
   pricing_ranges: PricingRange[]
-  created_at: string
+  created_at?: string
 }
 
 export declare interface PricingRange {
