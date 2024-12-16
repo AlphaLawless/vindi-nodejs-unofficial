@@ -18,5 +18,5 @@ export interface PlanItemsData {
 }
 
 export interface PlanItemsResponse extends ApiResponse {
-  plans: PlanItemReturn[]
+  plan_items: PlanItemReturn[]
 }

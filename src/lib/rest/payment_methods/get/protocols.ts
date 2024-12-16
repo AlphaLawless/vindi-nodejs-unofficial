@@ -12,6 +12,6 @@ export declare interface PaymentMethodsGetData {
   requestOptions?: Options
 }
 
-export declare interface PaymentMethodsGetResponse
-  extends ApiResponse,
-    PaymentMethodsReturn {}
+export declare interface PaymentMethodsGetResponse extends ApiResponse {
+  payment_method: PaymentMethodsReturn
+}

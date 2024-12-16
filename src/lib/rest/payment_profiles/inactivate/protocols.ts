@@ -17,6 +17,6 @@ export declare interface PaymentProfilesInactivateData {
   requestOptions?: Options
 }
 
-export declare interface PaymentProfilesInactivateResponse
-  extends ApiResponse,
-    PaymentProfilesReturn {}
+export declare interface PaymentProfilesInactivateResponse extends ApiResponse {
+  payment_profile: PaymentProfilesReturn
+}

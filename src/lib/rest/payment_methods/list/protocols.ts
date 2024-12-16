@@ -19,5 +19,5 @@ export declare interface PaymentMethodsListData {
 }
 
 export declare interface PaymentMethodsListResponse extends ApiResponse {
-  paymentmethods: PaymentMethodsReturn[]
+  payment_methods: PaymentMethodsReturn[]
 }

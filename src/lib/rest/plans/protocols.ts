@@ -1,4 +1,4 @@
-import type { ProductsReturn } from '../products/protocols'
+import type { ProductReturn } from '../products/protocols'
 import type { VindiMetadata } from '../protocols'
 
 export declare interface PlanBody {
@@ -50,7 +50,7 @@ export declare interface IPlan {
 
 export declare interface PlanItemReturn {
   id: number
-  product: ProductsReturn
+  product: ProductReturn
   pricing_schema: PricingSchema
   cycles: number
   created_at: string

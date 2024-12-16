@@ -39,6 +39,6 @@ export class Issue {
   update(issueUpdateData: IssueUpdateData): Promise<IssueUpdateResponse> {
     const { body, id, requestOptions } = issueUpdateData
     this.config.options = { ...this.config.options, ...requestOptions }
-    return update({ body, config: this.config, id })
+    return update({ config: this.config, id, body })
   }
 }

@@ -13,5 +13,5 @@ export declare interface ProductItemCreateData {
 }
 
 export declare interface ProductItemCreateResponse extends ApiResponse {
-  productitem: ProductItemReturn
+  product_item: ProductItemReturn
 }

@@ -12,7 +12,7 @@ export declare interface ProductsBody {
   metadata?: VindiMetadata
 }
 
-export declare interface ProductsReturn {
+export declare interface ProductReturn {
   id: number
   name: string
   code: string

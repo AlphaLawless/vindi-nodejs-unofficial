@@ -12,4 +12,6 @@ export declare interface IssueGetData {
   requestOptions?: Options
 }
 
-export declare interface IssueGetResponse extends ApiResponse, IssueReturn {}
+export declare interface IssueGetResponse extends ApiResponse {
+  issue: IssueReturn
+}

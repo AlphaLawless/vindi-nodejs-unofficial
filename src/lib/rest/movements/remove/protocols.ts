@@ -12,6 +12,6 @@ export declare interface MovementRemoveData {
   requestOptions?: Options
 }
 
-export declare interface MovementRemoveResponse
-  extends ApiResponse,
-    MovementReturn {}
+export declare interface MovementRemoveResponse extends ApiResponse {
+  movement: MovementReturn
+}

@@ -12,6 +12,6 @@ export declare interface CustomerUnarchiveData {
   requestOptions?: Options
 }
 
-export declare interface CustomerUnarchiveResponse
-  extends ApiResponse,
-    CustomerReturn {}
+export declare interface CustomerUnarchiveResponse extends ApiResponse {
+  customer: CustomerReturn
+}

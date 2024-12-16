@@ -12,4 +12,6 @@ export declare interface PlanGetData {
   requestOptions?: Options
 }
 
-export declare interface PlanGetResponse extends ApiResponse, PlanReturn {}
+export declare interface PlanGetResponse extends ApiResponse {
+  plan: PlanReturn
+}

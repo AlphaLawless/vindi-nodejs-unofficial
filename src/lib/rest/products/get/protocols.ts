@@ -1,6 +1,6 @@
 import type { ApiResponse, Options } from '@/protocols'
 import type VindiClient from '../../../..'
-import type { ProductsReturn } from '../protocols'
+import type { ProductReturn } from '../protocols'
 
 export declare interface ProductsGetRequest
   extends Exclude<ProductsGetData, 'requestOptions'> {
@@ -13,5 +13,5 @@ export declare interface ProductsGetData {
 }
 
 export declare interface ProductsGetResponse extends ApiResponse {
-  product: ProductsReturn
+  product: ProductReturn
 }

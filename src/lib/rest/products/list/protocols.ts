@@ -1,7 +1,7 @@
 import type { QueryParams } from '@/lib/rest/protocols'
 import type { ApiResponse, Options } from '@/protocols'
 import type { VindiClient } from '@/vindi-client'
-import type { ProductsReturn } from '../protocols'
+import type { ProductReturn } from '../protocols'
 
 type SearchAttributes =
   | 'id'
@@ -30,5 +30,5 @@ export declare interface ProductsListData {
 }
 
 export declare interface ProductsListResponse extends ApiResponse {
-  products: ProductsReturn[]
+  products: ProductReturn[]
 }

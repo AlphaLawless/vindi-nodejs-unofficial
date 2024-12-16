@@ -12,6 +12,6 @@ export declare interface MessageGetData {
   requestOptions?: Options
 }
 
-export declare interface MessageGetResponse
-  extends ApiResponse,
-    MessageReturn {}
+export declare interface MessageGetResponse extends ApiResponse {
+  message: MessageReturn
+}

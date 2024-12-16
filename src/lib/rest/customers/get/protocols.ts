@@ -12,6 +12,6 @@ export declare interface CustomerGetData {
   requestOptions?: Options
 }
 
-export declare interface CustomerGetResponse
-  extends ApiResponse,
-    CustomerReturn {}
+export declare interface CustomerGetResponse extends ApiResponse {
+  customer: CustomerReturn
+}
