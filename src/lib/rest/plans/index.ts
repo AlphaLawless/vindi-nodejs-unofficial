@@ -7,6 +7,8 @@ import { list } from './list'
 import type { PlanListData, PlanListResponse } from './list/protocols'
 import { items } from './plans_items'
 import type { PlanItemsData, PlanItemsResponse } from './plans_items/protocols'
+import { update } from './update'
+import type { PlanUpdateData, PlanUpdateResponse } from './update/protocols'
 
 export class Plan {
   constructor(private config: VindiClient) {}
@@ -42,6 +44,17 @@ export class Plan {
     const { id, requestOptions } = planGetData
     this.config.options = { ...this.config.options, ...requestOptions }
     return get({ config: this.config, id })
+  }
+
+  /**
+   * Vindi Update Plan.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/plans/putV1PlansId More Information}
+   */
+  update(plansUpdateData: PlanUpdateData): Promise<PlanUpdateResponse> {
+    const { requestOptions, id, body } = plansUpdateData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return update({ config: this.config, id, body })
   }
 
   /**

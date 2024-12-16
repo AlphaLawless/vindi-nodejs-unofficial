@@ -18,6 +18,11 @@ import type {
   CustomerUnarchiveData,
   CustomerUnarchiveResponse
 } from './unarchive/protocols'
+import { update } from './update'
+import type {
+  CustomerUpdateData,
+  CustomerUpdateResponse
+} from './update/protocols'
 
 export class Customer {
   constructor(private config: VindiClient) {}
@@ -44,6 +49,19 @@ export class Customer {
     const { requestOptions, params } = customerListData
     this.config.options = { ...this.config.options, ...requestOptions }
     return list({ config: this.config, params })
+  }
+
+  /**
+   * Vindi Update Customers.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/customers/putV1CustomersId More Information}
+   */
+  update(
+    customerUpdateData: CustomerUpdateData
+  ): Promise<CustomerUpdateResponse> {
+    const { requestOptions, id, body } = customerUpdateData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return update({ config: this.config, id, body })
   }
 
   /**
