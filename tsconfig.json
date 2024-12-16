@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2017",
     "module": "CommonJS",
-    "types": ["vitest/globals"],
+    "types": ["node"],
     "allowJs": true,
     "checkJs": true,
     "declaration": true,
@@ -22,6 +22,6 @@
       "@/tests/*": ["./tests/*"]
     }
   },
-  "include": ["tests", "src", "@types/*.d.ts"],
+  "include": ["tests", "src", "@types/*.d.ts", "test.ts"],
   "exclude": ["node_modules"]
 }

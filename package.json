@@ -1,6 +1,6 @@
 {
   "name": "@alphalawless/vindi-nodejs-unofficial",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "Vindi SDK NodeJS Unofficial",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,16 +39,13 @@
   "author": "Alpha Vylly <alpha.vylly12@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "@biomejs/biome": "1.6.3",
-    "@types/node": "20.12.2",
-    "@vitest/coverage-v8": "1.4.0",
-    "@vitest/ui": "1.4.0",
-    "git-commit-msg-linter": "5.0.7",
-    "husky": "9.0.11",
-    "lint-staged": "15.2.2",
-    "tsc-alias": "1.8.8",
-    "tsx": "4.7.1",
-    "typescript": "5.4.3",
-    "vitest": "1.4.0"
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "22.10.2",
+    "git-commit-msg-linter": "5.0.8",
+    "husky": "9.1.7",
+    "lint-staged": "15.2.11",
+    "tsc-alias": "1.8.10",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2"
   }
 }
