@@ -1,5 +1,6 @@
 import type { OmitDeep } from '@/@types/utils/omit-deep'
 import type { ICustomer } from '../customers/protocols'
+import type { PaymentProfile } from '../payment_profiles/protocols'
 import type { IPlan } from '../plans/protocols'
 import type {
   PricingSchema,
@@ -24,7 +25,8 @@ export declare interface SubscriptionBody {
       pricing_schema: OmitDeep<Partial<PricingSchema>, 'id'>
     }
   >
-  payment_profile?: PaymentProfile
+  payment_profile?: Pick<PaymentProfile, 'id'> &
+    Partial<Omit<PaymentProfile, 'id'>>
   invoice_split?: boolean
   subscription_affiliates?: SubscriptionAffiliate[]
 }
@@ -72,34 +74,6 @@ export declare interface CurrentPeriod {
   start_at: string
   end_at: string
   duration: number
-}
-
-export declare interface PaymentProfile {
-  id: number
-  holder_name: string
-  registry_code: string
-  bank_branch: string
-  bank_account: string
-  card_expiration: string
-  allow_as_fallback: boolean
-  card_number_first_six: string
-  card_number_last_four: string
-  renewed_card: RenewedCard
-  card_renewed_at: string
-  token: string
-  created_at: string
-  payment_company: PaymentCompany
-}
-
-export declare interface RenewedCard {
-  card_number_last_four: string
-  card_expiration: string
-}
-
-export declare interface PaymentCompany {
-  id: number
-  name: string
-  code: string
 }
 
 export declare interface SubscriptionAffiliate {

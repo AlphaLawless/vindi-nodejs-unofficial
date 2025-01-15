@@ -12,6 +12,6 @@ export declare interface SubscriptionGetData {
   requestOptions?: Options
 }
 
-export declare interface SubscriptionGetResponse
-  extends ApiResponse,
-    SubscriptionReturn {}
+export declare interface SubscriptionGetResponse extends ApiResponse {
+  subscription: SubscriptionReturn
+}

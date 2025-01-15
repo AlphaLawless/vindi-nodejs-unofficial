@@ -16,6 +16,34 @@ export declare interface PaymentProfilesCreateBody {
   payment_method_code: string
 }
 
+export declare interface PaymentProfile {
+  id: number
+  holder_name: string
+  registry_code: string
+  bank_branch: string
+  bank_account: string
+  card_expiration: string
+  allow_as_fallback: boolean
+  card_number_first_six: string
+  card_number_last_four: string
+  renewed_card: RenewedCard
+  card_renewed_at: string
+  token: string
+  created_at: string
+  payment_company: PaymentCompany
+}
+
+export declare interface RenewedCard {
+  card_number_last_four: string
+  card_expiration: string
+}
+
+export declare interface PaymentCompany {
+  id: number
+  name: string
+  code: string
+}
+
 export interface PaymentProfilesReturn {
   id: number
   status: string

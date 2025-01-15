@@ -34,6 +34,11 @@ import type {
   SubscriptionRenewData,
   SubscriptionRenewResponse
 } from './renew/protocols'
+import { update } from './update'
+import type {
+  SubscriptionUpdateData,
+  SubscriptionUpdateResponse
+} from './update/protocols'
 
 export class Subscription {
   constructor(private config: VindiClient) {}
@@ -88,6 +93,19 @@ export class Subscription {
     const { id, requestOptions } = subscriptionGetData
     this.config.options = { ...this.config.options, ...requestOptions }
     return get({ config: this.config, id })
+  }
+
+  /**
+   * Vindi update a Subscription.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/subscriptions/putV1SubscriptionsId More Information}
+   */
+  update(
+    subscriptionUpdateData: SubscriptionUpdateData
+  ): Promise<SubscriptionUpdateResponse> {
+    const { requestOptions, id, body } = subscriptionUpdateData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return update({ config: this.config, id, body })
   }
 
   /**

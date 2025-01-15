@@ -12,6 +12,6 @@ export declare interface ProductItemGetData {
   requestOptions?: Options
 }
 
-export declare interface ProductItemGetResponse
-  extends ApiResponse,
-    ProductItemReturn {}
+export declare interface ProductItemGetResponse extends ApiResponse {
+  product_item: ProductItemReturn
+}
