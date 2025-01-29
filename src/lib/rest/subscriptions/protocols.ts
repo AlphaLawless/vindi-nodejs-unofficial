@@ -83,7 +83,7 @@ export declare interface SubscriptionAffiliate {
   status: string
 }
 
-export interface BillReturn {
+export declare interface BillReturn {
   id: number
   code: string
   amount: number
@@ -97,7 +97,7 @@ export interface BillReturn {
   payment_profile: PaymentProfile
 }
 
-export interface Charge {
+export declare interface Charge {
   id: number
   amount: number
   status: string
@@ -113,7 +113,7 @@ export interface Charge {
   payment_method: PaymentMethod
 }
 
-export interface LastTransaction {
+export declare interface LastTransaction {
   id: number
   transaction_type: string
   status: string
@@ -132,7 +132,7 @@ export interface LastTransaction {
   payment_profile: PaymentProfile
 }
 
-export interface Gateway {
+export declare interface Gateway {
   id: number
   connector: string
 }
