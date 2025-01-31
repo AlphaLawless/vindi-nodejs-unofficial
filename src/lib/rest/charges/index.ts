@@ -5,6 +5,8 @@ import { list } from './list'
 import type { ChargesListData, ChargesListResponse } from './list/protocols'
 import { remove } from './remove'
 import type { ChargeRemoveData, ChargeRemoveResponse } from './remove/protocols'
+import { update } from './update'
+import type { ChargeUpdateData, ChargeUpdateResponse } from './update/protocols'
 
 export class Charge {
   constructor(private config: VindiClient) {}
@@ -18,6 +20,17 @@ export class Charge {
     const { requestOptions, params } = chargesListData
     this.config.options = { ...this.config.options, ...requestOptions }
     return list({ config: this.config, params })
+  }
+
+  /**
+   * Vindi Update a Charge.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/charges/putV1ChargesId More Information}
+   */
+  update(chargeUpdateData: ChargeUpdateData): Promise<ChargeUpdateResponse> {
+    const { body, id, requestOptions } = chargeUpdateData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return update({ config: this.config, id, body })
   }
 
   /**

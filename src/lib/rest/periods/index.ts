@@ -1,4 +1,6 @@
 import type { VindiClient } from '@/vindi-client'
+import { create } from './create'
+import type { PeriodCreateData, PeriodCreateResponse } from './create/protocols'
 import { get } from './get'
 import type { PeriodGetData, PeriodGetResponse } from './get/protocols'
 import { list } from './list'
@@ -48,14 +50,14 @@ export class Period {
   }
 
   /**
-   * Vindi Create Period.
+   * Vindi Create a Period Manual.
    *
    * @see {@link https://vindi.github.io/api-docs/dist/#/periods/postV1PeriodsIdBill More Information}
    */
-  create(periodCreateData: any): string {
-    const { body, requestOptions } = periodCreateData
+  create(periodCreateData: PeriodCreateData): Promise<PeriodCreateResponse> {
+    const { requestOptions, id } = periodCreateData
     this.config.options = { ...this.config.options, ...requestOptions }
-    return 'WIP, see more on https://vindi.github.io/api-docs/dist/#/periods/postV1PeriodsIdBill'
+    return create({ id, config: this.config })
   }
 
   /**

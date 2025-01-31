@@ -6,12 +6,11 @@ export declare interface ProductItemRemoveRequest
   extends Exclude<ProductItemRemoveData, 'requestOptions'> {
   config: VindiClient
 }
-
 export declare interface ProductItemRemoveData {
   id: string | number
   requestOptions?: Options
 }
 
-export declare interface ProductItemRemoveResponse
-  extends ApiResponse,
-    ProductItemReturn {}
+export declare interface ProductItemRemoveResponse extends ApiResponse {
+  product_item: ProductItemReturn
+}
