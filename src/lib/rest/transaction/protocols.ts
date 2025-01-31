@@ -1,6 +1,6 @@
 import type { CustomerReturn } from '../customers/protocols'
 import type { PaymentMethodsReturn } from '../payment_methods/protocols'
-import type { PaymentProfile } from '../subscriptions/protocols'
+import type { PaymentProfile } from '../payment_profiles/protocols'
 
 export declare interface TransactionReturn {
   id: number
