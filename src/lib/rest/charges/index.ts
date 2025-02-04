@@ -5,6 +5,11 @@ import { list } from './list'
 import type { ChargesListData, ChargesListResponse } from './list/protocols'
 import { remove } from './remove'
 import type { ChargeRemoveData, ChargeRemoveResponse } from './remove/protocols'
+import { retry_charge } from './retry-charge'
+import type {
+  RetryChargeData,
+  RetryChargeResponse
+} from './retry-charge/protocols'
 import { update } from './update'
 import type { ChargeUpdateData, ChargeUpdateResponse } from './update/protocols'
 
@@ -53,5 +58,16 @@ export class Charge {
     const { id, requestOptions, params } = chargeRemoveData
     this.config.options = { ...this.config.options, ...requestOptions }
     return remove({ config: this.config, id, params })
+  }
+
+  /**
+   * Vindi Retry a Charge.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/charges/postV1ChargesIdCharge More Information}
+   */
+  retry_charge(retryChargeData: RetryChargeData): Promise<RetryChargeResponse> {
+    const { id, requestOptions, body } = retryChargeData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return retry_charge({ config: this.config, id, body })
   }
 }

@@ -33,5 +33,5 @@ export declare interface PaymentProfilesListData {
 }
 
 export declare interface PaymentProfilesListResponse extends ApiResponse {
-  paymentProfiles: PaymentProfilesReturn[]
+  payment_profiles: PaymentProfilesReturn[]
 }

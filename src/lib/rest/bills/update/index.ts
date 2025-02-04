@@ -1,12 +1,12 @@
 import { Http } from '@/lib/http'
-import type { ChargeUpdateRequest, ChargeUpdateResponse } from './protocols'
+import type { BillUpdateRequest, BillUpdateResponse } from './protocols'
 
 export const update = async ({
   config,
   body,
   id
-}: ChargeUpdateRequest): Promise<ChargeUpdateResponse> => {
-  return await Http.fetch<ChargeUpdateResponse>(`/v1/charges/${id}`, {
+}: BillUpdateRequest): Promise<BillUpdateResponse> => {
+  return await Http.fetch<BillUpdateResponse>(`/v1/bills/${id}`, {
     method: 'PUT',
     headers: {
       Authorization: `Basic ${Buffer.from(`${config.key}:`).toString('base64')}`
