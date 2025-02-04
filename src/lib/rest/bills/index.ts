@@ -6,7 +6,7 @@ import type { BillGetData, BillGetResponse } from './get/protocols'
 import { list } from './list'
 import type { BillsListData, BillsListResponse } from './list/protocols'
 import { update } from './update'
-import type { BillUpdateRequest, BillUpdateResponse } from './update/protocols'
+import type { BillUpdateData, BillUpdateResponse } from './update/protocols'
 
 export class Bills {
   constructor(private config: VindiClient) {}
@@ -49,7 +49,7 @@ export class Bills {
    *
    * @see {@link https://vindi.github.io/api-docs/dist/#/bills/putV1BillsId More Information}
    */
-  update(billUpdateData: BillUpdateRequest): Promise<BillUpdateResponse> {
+  update(billUpdateData: BillUpdateData): Promise<BillUpdateResponse> {
     const { body, id, requestOptions } = billUpdateData
     this.config.options = { ...this.config.options, ...requestOptions }
     return update({ config: this.config, id, body })
