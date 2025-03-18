@@ -1,8 +1,25 @@
 import type { VindiClient } from '@/vindi-client'
+import { capture } from './capture'
+import type {
+  CaptureChargeData,
+  CaptureChargeResponse
+} from './capture/protocols'
+import { fraud_review } from './fraude-view'
+import type {
+  FraudReviewChargeData,
+  FraudReviewChargeResponse
+} from './fraude-view/protocols'
 import { get } from './get'
 import type { ChargeGetData, ChargeGetResponse } from './get/protocols'
 import { list } from './list'
 import type { ChargesListData, ChargesListResponse } from './list/protocols'
+import { refund } from './refund'
+import type { RefundChargeData, RefundChargeResponse } from './refund/protocols'
+import { reissue } from './reissue'
+import type {
+  ReissueChargeData,
+  ReissueChargeResponse
+} from './reissue/protocols'
 import { remove } from './remove'
 import type { ChargeRemoveData, ChargeRemoveResponse } from './remove/protocols'
 import { retry_charge } from './retry-charge'
@@ -69,5 +86,55 @@ export class Charge {
     const { id, requestOptions, body } = retryChargeData
     this.config.options = { ...this.config.options, ...requestOptions }
     return retry_charge({ config: this.config, id, body })
+  }
+
+  /**
+   * Vindi Refund a Charge.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/charges/postV1ChargesIdRefund More Information}
+   */
+  refund(refundChargeData: RefundChargeData): Promise<RefundChargeResponse> {
+    const { id, requestOptions, body } = refundChargeData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return refund({ config: this.config, id, body })
+  }
+
+  /**
+   * Vindi Reissue a Charge.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/charges/postV1ChargesIdReissue More Information}
+   */
+  reissue(
+    reissueChargeData: ReissueChargeData
+  ): Promise<ReissueChargeResponse> {
+    const { id, requestOptions, body } = reissueChargeData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return reissue({ config: this.config, id, body })
+  }
+
+  /**
+   * Vindi Capture a Charge.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/charges/postV1ChargesIdCapture More Information}
+   */
+  capture(
+    captureChargeData: CaptureChargeData
+  ): Promise<CaptureChargeResponse> {
+    const { id, requestOptions } = captureChargeData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return capture({ config: this.config, id })
+  }
+
+  /**
+   * Vindi Fraud Review a Charge.
+   *
+   * @see {@link https://vindi.github.io/api-docs/dist/#/charges/postV1ChargesIdFraudReview More Information}
+   */
+  fraud_review(
+    fraudReviewChargeData: FraudReviewChargeData
+  ): Promise<FraudReviewChargeResponse> {
+    const { id, requestOptions, body } = fraudReviewChargeData
+    this.config.options = { ...this.config.options, ...requestOptions }
+    return fraud_review({ config: this.config, id, body })
   }
 }
